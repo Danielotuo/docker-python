@@ -9,10 +9,7 @@ def main():
 
     completed_process = subprocess.run(
         [command, *args], stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
-    print("stdout:")
     print(completed_process.stdout)
-
-    print("stderr:")
     print(completed_process.stderr)
 
 
