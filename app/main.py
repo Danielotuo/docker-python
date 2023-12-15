@@ -11,6 +11,10 @@ def main():
         [command, *args], stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
     print(completed_process.stdout.strip())
 
+    stderr_output = completed_process.stderr.strip()
+    if stderr_output:
+        print(stderr_output)
+
 
 if __name__ == "__main__":
     main()
