@@ -13,7 +13,7 @@ def main():
     print("stdout:")
     print(completed_process.stdout)
 
-    print("\nstderr:")
+    print("stderr:")
     print(completed_process.stderr)
 
 
