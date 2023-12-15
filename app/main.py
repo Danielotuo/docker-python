@@ -3,17 +3,14 @@ import sys
 
 
 def main():
+    print("Logs from your program will appear here!")
 
     command = sys.argv[3]
     args = sys.argv[4:]
 
-    completed_process = subprocess.run(
-        [command, *args], stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
-    print(completed_process.stdout.strip())
-
-    stderr_output = completed_process.stderr.strip()
-    if stderr_output:
-        print(stderr_output)
+    completed_process = subprocess.run([command, *args], capture_output=True)
+    sys.stdout.write(completed_process.stdout.decode("utf-8"))
+    sys.stderr.write(completed_process.stderr.decode("utf-8"))
 
 
 if __name__ == "__main__":
