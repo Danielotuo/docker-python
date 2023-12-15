@@ -3,7 +3,6 @@ import sys
 
 
 def main():
-    print("Logs from your program will appear here!")
 
     command = sys.argv[3]
     args = sys.argv[4:]
